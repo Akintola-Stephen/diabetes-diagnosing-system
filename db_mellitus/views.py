@@ -63,14 +63,14 @@ def patient_view(request, pk, template_name='patient/patient-detail.html'):
 @require_http_methods(["GET", "POST"])
 def dm_prediction(request, pk):
     symptom = get_object_or_404(Patient, pk=pk)
-    symptom.pregnancy_count = 0
-    symptom.plasma = 76
-    symptom.blood_pressure = 77
-    symptom.skin_thickness = 12
-    symptom.insulin = 105
-    symptom.bmi = 71
-    symptom.pedigree = 0.67
-    symptom.age = 18
+    symptom.pregnancy_count = request.POST.get("pregnancy_count")
+    symptom.plasma = request.POST.get("plasma")
+    symptom.blood_pressure = request.POST.get("blood_pressure")
+    symptom.skin_thickness = request.POST.get("skin_thickness")
+    symptom.insulin = request.POST.get("insulin")
+    symptom.bmi = request.POST.get("bmi")
+    symptom.pedigree = request.POST.get("pedigree")
+    symptom.age = request.POST.get("age")
 
     user_data = np.array(
         [
