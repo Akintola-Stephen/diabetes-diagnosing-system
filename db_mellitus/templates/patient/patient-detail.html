@@ -1,0 +1,250 @@
+    <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'scss/_mixin.scss' %}">
+    <link rel="stylesheet" href="{% static 'scss/_responsive.scss' %}">
+    <link rel="stylesheet" href="{% static 'scss/_variables.scss' %}">
+    <link rel="stylesheet" href="{% static 'scss/_theme_color.scss' %}">
+    <link rel="stylesheet" href="{% static 'scss/style.scss' %}">
+
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Diabetics - Melitus Know Your Status</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
+
+    <!-- Style CSS -->
+
+</head>
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+ <style>
+    body, h3, h4{
+      font-family: ubuntu;
+    }
+ </style>
+     <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="preload-content">
+            <div id="world-load"></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="index.html"><img src="{% static 'img/core-img/logo.png' %}" alt="Logo"></a>
+                        <!-- Navbar Toggler -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#worldNav" aria-controls="worldNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <!-- Navbar -->
+                        <div class="collapse navbar-collapse" id="worldNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="index.html">Home</a>
+                                        <a class="dropdown-item" href="catagory.html">Catagory</a>
+                                        <a class="dropdown-item" href="single-blog.html">Single Blog</a>
+                                        <a class="dropdown-item" href="regular-page.html">Regular Page</a>
+                                        <a class="dropdown-item" href="contact.html">Contact</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><span class="glyphicon glyphicon-home"></span> Gadgets</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'patient-list' %}"><span class="glyphicon glyphicon-envelope"></span> patient list</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% static 'url' %}"><span class="glyphicon glyphicon-bell"></span> Notifications </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'logout' %}"><span class="glyphicon glyphicon-eye-close"></span> LogOut</a>
+                                </li>
+                            </ul>
+                            <!-- Search Form  -->
+                            <div id="search-wrapper">
+                                <form action="#">
+                                    <input type="text" id="search" placeholder="Search something...">
+                                    <div id="close-icon"></div>
+                                    <input class="d-none" type="submit" value="">
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ********** Hero Area Start ********** -->
+    <div class="hero-area height-400 bg-img background-overlay" style="background-image: url(/static/img/blog-img/bg4.jpg);"></div>
+    <!-- ********** Hero Area End ********** -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="index.html"><img src="{% static 'img/core-img/logo.png' %}" alt="Logo"></a>
+                        <!-- Navbar Toggler -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#worldNav" aria-controls="worldNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <!-- Navbar -->
+                        <div class="collapse navbar-collapse" id="worldNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="index.html">Home</a>
+                                        <a class="dropdown-item" href="catagory.html">Catagory</a>
+                                        <a class="dropdown-item" href="single-blog.html">Single Blog</a>
+                                        <a class="dropdown-item" href="regular-page.html">Regular Page</a>
+                                        <a class="dropdown-item" href="contact.html">Contact</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><span class="glyphicon glyphicon-home"></span> Gadgets</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'patient-list' %}"><span class="glyphicon glyphicon-envelope"></span> patient list</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% static 'url' %}"><span class="glyphicon glyphicon-bell"></span> Notifications </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'logout' %}"><span class="glyphicon glyphicon-eye-close"></span> LogOut</a>
+                                </li>
+                            </ul>
+                            <!-- Search Form  -->
+                            <div id="search-wrapper">
+                                <form action="#">
+                                    <input type="text" id="search" placeholder="Search something...">
+                                    <div id="close-icon"></div>
+                                    <input class="d-none" type="submit" value="">
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+<body>
+    <div class="container">
+        <u><h3>Patient Detail</h3></u>
+        <img src="" style="float:right;"/>
+        <p>
+            <b>Name :</b> {{object.first_name}} {{object.middle_name}} {{object.last_name}}
+            <br/>
+            <b>Age :</b>
+            <b> {{object.symptom.age}}</b>
+            <br/>
+            <b>Gender: </b>
+            <b> {{object.gender}}</b>
+            <br/>
+        </p>
+    </div>
+
+
+    <div class="container">
+        <table class="table table-hover" id="myTable" style="margin-top:50px;">
+            <thead>
+            <tr>
+                <th>Condition</th>
+                <th>Result</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Patient ID</td>
+                <td><b>{{object.id}}</b></td>
+            </tr>
+            <tr>
+                <td>Symptom count</td>
+                <td>{{object.symptom.pregnancy_count}}</td>
+            </tr>
+            <tr>
+                <td>Plasma level</td>
+                <td>{{object.symptom.plasma}}</td>
+            </tr>
+            <tr>
+                <td>Skin thickness</td>
+                <td>{{object.symptom.skin_thickness}}</td>
+            </tr>
+            <td>Blood pressure level</td>
+                <td>{{object.symptom.blood_pressure}}</td>
+            </tr>
+
+            <td>insulin level</td>
+                <td>{{object.symptom.insulin}}</td>
+            </tr>
+
+            <td>BMI</td>
+                <td>{{object.symptom.bmi}}</td>
+            </tr>
+
+            <td>pedigree</td>
+                <td>{{object.symptom.pedigree}}</td>
+            </tr>
+
+            <td>age</td>
+                <td>{{object.symptom.age}}</td>
+            </tr>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+<script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Plugins js -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js' %}"></script>
+
+</body>
+

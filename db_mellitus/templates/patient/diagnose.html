@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+{% load static %}
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'scss/_mixin.scss' %}">
+    <link rel="stylesheet" href="{% static 'scss/_responsive.scss' %}">
+    <link rel="stylesheet" href="{% static 'scss/_variables.scss' %}">
+    <link rel="stylesheet" href="{% static 'scss/_theme_color.scss' %}">
+    <link rel="stylesheet" href="{% static 'scss/style.scss' %}">
+
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Diabetics - Melitus Know Your Status</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
+
+    <!-- Style CSS -->
+
+</head>
+
+<style>
+    body{
+    font-family:ubuntu;
+    }
+</style>
+
+    <div id="preloader">
+        <div class="preload-content">
+            <div id="world-load"></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="index.html"><img src="{% static 'img/core-img/logo.png' %}" alt="Logo"></a>
+                        <!-- Navbar Toggler -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#worldNav" aria-controls="worldNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <!-- Navbar -->
+                        <div class="collapse navbar-collapse" id="worldNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{% url 'patient-new' %}">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="index.html">Home</a>
+                                        <a class="dropdown-item" href="catagory.html">Catagory</a>
+                                        <a class="dropdown-item" href="single-blog.html">Single Blog</a>
+                                        <a class="dropdown-item" href="regular-page.html">Regular Page</a>
+                                        <a class="dropdown-item" href="contact.html">Contact</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><span class="glyphicon glyphicon-home"></span> Gadgets</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'patient-list' %}"><span class="glyphicon glyphicon-envelope"></span> patient list</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% static 'url' %}"><span class="glyphicon glyphicon-bell"></span> Notifications </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'logout' %}"><span class="glyphicon glyphicon-eye-close"></span> LogOut</a>
+                                </li>
+                            </ul>
+                            <!-- Search Form  -->
+                            <div id="search-wrapper">
+                                <form action="#">
+                                    <input type="text" id="search" placeholder="Search something...">
+                                    <div id="close-icon"></div>
+                                    <input class="d-none" type="submit" value="">
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <!-- ********** Hero Area Start ********** -->
+    <div class="hero-area height-400 bg-img background-overlay" style="background-image: url(/static/img/Timetable.jpg);"></div>
+    <!-- ********** Hero Area End ********** -->
+ <section class="contact-area section-padding-100">
+    <div class="container" style="margin-top:50px;">
+       <div class="row">
+            <div class = "col-md-7">
+                        <form action="{% url 'diagnose-patient' 324 %}" method="POST">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="col-3">
+                                            <label>Pregnancy count</label>
+                                            <div class="group">
+                                                <input type="number" min="0" name="pregnancy_count" id="f_name" required>
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                             <label>Plasma</label>
+                                            <div class="group">
+                                                <input type="number" name="plasma" id="plasma" required />
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                             <label>skin thickness</label>
+                                            <div class="group">
+                                                <input type="number" name="skin_thickness" id="skin_thickness" required />
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <label>blood pressure</label>
+                                            <div class="group">
+                                                <input type="number" name="blood_pressure" id="blood_pressure" required />
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                          <div class="col-6">
+                                              <label>Insulin level</label>
+                                            <div class="group">
+                                                <input type="number" name="insulin" id="insulin" required />
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                            </div>
+                                          </div>
+
+                                        <div class="col-6">
+                                          <label>BMI</label>
+                                        <div class="group">
+                                            <input type="number" name="bmi" id="bmi" required />
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                        </div>
+                                      </div>
+
+                                        <div class="col-6">
+                                          <label>pedigree</label>
+                                            <div class="group">
+                                                <input type="number" name="pedigree" id="pedigree" required />
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                            </div>
+                                        </div>
+
+                                         <div class="col-6">
+                                            <label>age</label>
+                                            <div class="group">
+                                                <input type="number" min="1" name="age" id="age" required />
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-success" style="margin-bottom:50px;">DIAGNOSE</button>
+                                    </div>
+                                </div>
+                        </form>
+            </div>
+            <div>
+                  <div class="display-4 my-2 text-center col-md-4">
+                      <div class="alert alert"  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); height:100%;">
+                          <h4 style="font-family:Berlin Sans FB;">RESULT ANALYSIS</h4><hr>
+                          You <b>have</b> diabetes disease.
+                          <ul>
+                              <li>Expected insulin level is 202  , but you had  89</li>
+                          </ul>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+ </section>
+
+<!-- ***** Footer Area Start ***** -->
+        <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <a href="#"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+                        <div class="copywrite-text mt-30">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This application is developed <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Stephen</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <h5>Subscribe</h5>
+                        <form action="#" method="post">
+                            <input type="email" name="email" id="email" placeholder="Enter your mail">
+                            <button type="button"><i class="fa fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ***** Footer Area End ***** -->
+
+
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Plugins js -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js' %}"></script>
+
+
+<script>
+    var  x = document.getElementByClassName("alert");
+    setTimeout(function(){
+    if (x && x.length){
+        x[0].classLit.add('hide);
+    }
+    }, 3000);
+</script>
+</html>

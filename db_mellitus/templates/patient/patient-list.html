@@ -1,0 +1,233 @@
+
+{% load static %}
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'scss/_mixin.scss' %}">
+    <link rel="stylesheet" href="{% static 'scss/_responsive.scss' %}">
+    <link rel="stylesheet" href="{% static 'scss/_variables.scss' %}">
+    <link rel="stylesheet" href="{% static 'scss/_theme_color.scss' %}">
+    <link rel="stylesheet" href="{% static 'scss/style.scss' %}">
+
+{%  block content %}
+
+ <title>Diabetics - Melitus Know Your Status</title>
+
+<style>
+      body{
+        font-family: sans-serif;
+    }
+     form{
+     width:35%;
+     padding:25px;
+     border-radius:5px;
+     }
+    .select {
+    font-size: 14px;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-bottom: 2px solid;
+    border-color: #f1f1f1;
+    }
+
+ </style>
+
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="preload-content">
+            <div id="world-load"></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="index.html"><img src="{% static 'img/core-img/logo.png' %}" alt="Logo"></a>
+                        <!-- Navbar Toggler -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#worldNav" aria-controls="worldNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <!-- Navbar -->
+                        <div class="collapse navbar-collapse" id="worldNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{% url 'patient-new' %}">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="index.html">Home</a>
+                                        <a class="dropdown-item" href="catagory.html">Catagory</a>
+                                        <a class="dropdown-item" href="single-blog.html">Single Blog</a>
+                                        <a class="dropdown-item" href="regular-page.html">Regular Page</a>
+                                        <a class="dropdown-item" href="contact.html">Contact</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><span class="glyphicon glyphicon-home"></span> Gadgets</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><span class="glyphicon glyphicon-envelope"></span> patient list</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% static 'url' %}"><span class="glyphicon glyphicon-bell"></span> Notifications </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><span class="glyphicon glyphicon-eye-close"></span> LogOut</a>
+                                </li>
+                            </ul>
+                            <!-- Search Form  -->
+                            <div id="search-wrapper">
+                                <form action="#">
+                                    <input type="text" id="search" placeholder="Search something...">
+                                    <div id="close-icon"></div>
+                                    <input class="d-none" type="submit" value="">
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ********** Hero Area Start ********** -->
+    <div class="hero-area height-400 bg-img background-overlay" style="background-image: url(/static/img/blog-img/bg4.jpg);"></div>
+    <!-- ********** Hero Area End ********** -->
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="col-md-3" style="margin-top:70px;">
+                 <a href="{% url 'patient-new' %}"><button class="btn btn-success">Add New Patient</button></a>
+                </div>
+                <div class="col-md-3" style="float:right; margin-top:70px;">
+                    <input id="myInput" class="form-control" type="text" placeholder="Search Patient ..." style="float:right; margin-bottom:40px; width:400px;">
+                </div>
+                <table class="table table-hover" id="myTable" style="margin-top:50px;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Middle Name</th>
+                            <th>Last Name</th>
+                            <th>Edit</th>
+                            <th>View</th>
+                            <th>Delete</th>
+                            <th>Diagnosis Result</th>
+                            <th>Diagnose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for patient in page_obj %}
+                            <tr>
+                                <td>{{patient.id}}</td>
+                                <td>{{patient.first_name}}</td>
+                                <td>{{patient.middle_name}}</td>
+                                <td>{{patient.last_name}}</td>
+                                <td><a href="{% url 'patient-edit' patient.id %}" style="cursor:pointer"><span class="glyphicon glyphicon-edit"></span></a></td>
+                                <td><a href="{% url 'patient-view' patient.id %}" style="cursor:pointer; color:green;"><span  class="glyphicon glyphicon-eye-open"></span></a></td>
+                                <td><a href="{% url 'patient-delete' patient.id %}" style="cursor:pointer; color: red;"><span class="glyphicon glyphicon-edit"></span></a></td>
+                                <td>{{patient.symptom.prediction_result}}</td>
+                                <td><a href="{% url 'diagnose-patient' patient.id %}"><button class="btn btn-success">Diagnose</button></a></td>
+                            </tr>
+                         {% endfor %}
+                    </tbody>
+                </table>
+
+                <div class="pager">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                        <button class="btn btn-default"><a href="?page=1">&laquo; first</a></button>
+                        <button class="btn btn-default"><a href="?page={{ page_obj.previous_page_number }}">previous</a></button>
+                        {% endif %}
+
+
+                        {% if page_obj.has_next %}
+                           <button class="btn btn-default"><a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a></button>
+                           <button class="btn btn-default"><a href="?page={{ page_obj.next_page_number }}">next</a></button>
+                        {% endif %}
+                         <br/>
+                         <br/>
+                        <span class="current">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        </span>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <a href="#"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+                        <div class="copywrite-text mt-30">
+                            <p>Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script>
+                                All rights reserved | This application is developed
+                                <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Stephen</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <h5>Subscribe</h5>
+                        <form action="#" method="post">
+                            <input type="email" name="email" id="email" placeholder="Enter your mail">
+                            <button type="button"><i class="fa fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+     <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Plugins js -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js' %}"></script>
+
+{% endblock %}
+
+    <script>
+
+         $(document).ready(function(){
+            $("#myInput").on("keyup", function(){
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+            });
+         });
+     </script>
